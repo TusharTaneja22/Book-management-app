@@ -21,7 +21,8 @@ export const BookDetails = () => {
         component="img"
         image={book.coverImage}
         alt={book.title}
-        sx={{ width: { xs: '100%', sm: 200 }, height: { xs: 'auto', sm: 220 }, objectFit: "cover", borderRadius: 2, mr: { sm: 2 }, mb: { xs: 2, sm: 0 } }}
+        sx={{ width: '100%', height: 'auto', maxWidth: { sm: 150 }, maxHeight: { sm: 220 }, objectFit: "cover", borderRadius: 2, mb: { xs: 2, sm: 0 } }}
+
       />
       <CardContent>
         <Typography variant="h4" gutterBottom>{book.title}</Typography>

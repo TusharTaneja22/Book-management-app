@@ -46,8 +46,8 @@ export const BookList = () => {
 
   return (
     <Box>
-      {books.map((book) => (
-        <BookCard key={book.id} book={book} />
+      {books.map((book,i) => (
+        <BookCard key={i} book={book} />
       ))}
       <div ref={loader}>{loading && <CircularProgress />}</div>
     </Box>
