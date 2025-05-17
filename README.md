@@ -22,10 +22,3 @@ A modern React-based Book Management Application that lets users search for book
 
 ![image](https://github.com/user-attachments/assets/bd87ac0e-5221-4b90-b0ca-aa42d64709ef)
 
-## 🧑‍💻 Getting Started
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/your-username/book-management-app.git
-cd book-management-app
