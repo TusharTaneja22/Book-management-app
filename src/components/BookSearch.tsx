@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { searchBooks } from "../api/books";
 import type { Book } from "../types/book";
 import { BookCard } from "./BookCard";
-import { TextField, Container } from "@mui/material";
+import { TextField, Box } from "@mui/material";
 
 export const BookSearch = () => {
   const [query, setQuery] = useState("");
@@ -26,7 +26,7 @@ export const BookSearch = () => {
   }, [debouncedQuery]);
 
   return (
-    <Container sx={{ mt: 4 }}>
+    <Box>
       <TextField
         label="Search books"
         variant="outlined"
@@ -38,6 +38,6 @@ export const BookSearch = () => {
       {results.map((book) => (
         <BookCard key={book.id} book={book} />
       ))}
-    </Container>
+      </Box>
   );
 };
