@@ -2,7 +2,7 @@ import type { Book } from '../types/book';
 
 const API_URL = "https://openlibrary.org/search.json?q=book";
 
-export const fetchBooks = async (page = 1, limit = 5): Promise<Book[]> => {
+export const fetchBooks = async (page = 1, limit = 20): Promise<Book[]> => {
   const res = await fetch(`${API_URL}&page=${page}`);
   const data = await res.json();
   return data.docs.slice(0, limit).map((doc: any) => ({
@@ -14,8 +14,8 @@ export const fetchBooks = async (page = 1, limit = 5): Promise<Book[]> => {
   }));
 };
 
-export const searchBooks = async (query: string): Promise<Book[]> => {
-  const res = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
+export const searchBooks = async (query: string,page = 1): Promise<Book[]> => {
+  const res = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&page=${page}`);
   const data = await res.json();
   return data.docs.slice(0, 20).map((doc: any, i: number) => ({
     id: i,
